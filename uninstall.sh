@@ -5,11 +5,12 @@ type=${1:-1000}
 
 echo "Uninstalling GSX-$type"
 
-sudo rm -f /usr/share/X11/xorg.conf.d/40-sensheiser-gsx-$type.conf
-sudo rm -f /etc/X11/xorg.conf.d/40-sensheiser-gsx-$type.conf
+sudo rm -f /usr/share/X11/xorg.conf.d/40-sennheiser-gsx-$type.conf
+sudo rm -f /etc/X11/xorg.conf.d/40-sennheiser-gsx-$type.conf
 sudo rm -f /lib/udev/rules.d/91-pulseaudio-gsx$type.rules 
 sudo rm -f /etc/udev/rules.d/91-pulseaudio-gsx$type.rules 
-sudo rm -f /usr/share/pulseaudio/alsa-mixer/profile-sets/sennheiser-gsx-$type.conf
+sudo rm -f /usr/share/alsa-card-profile/mixer/profile-sets/sennheiser-gsx-$type.conf
+sudo rm -f /etc/udev/hwdb.d/sennheiser-gsx.hwdb
 
 echo "Reloading udev rules"
 sudo udevadm control -R
